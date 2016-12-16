@@ -50,7 +50,7 @@ Car.prototype.park = function () {
 }
 
 Car.prototype.pickUp = function (name) {
-  if (this.running === true && this.passengers.length < 3) {
+  if (this.running === true && (this.seats - this.passengers.length) > 1) {
     console.log('driving to pick up ' + name)
     this.passengers.push(name)
     return true
